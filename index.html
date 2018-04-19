@@ -5,6 +5,7 @@
     <title>Extrude polygons for 3D indoor mapping.</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
+    <script src="./data.js"></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
     <style>
         body { margin:0; padding:0; }
@@ -33,14 +34,20 @@ map.on('load', function() {
             // GeoJSON Data source used in vector tiles, documented at
             // https://gist.github.com/ryanbaumann/a7d970386ce59d11c16278b90dde094d
             'type': 'geojson',
-            'data': '/mapbox-gl-js/assets/indoor-3d-map.geojson'
+            'data': data
         },
         'paint': {
             // See the Mapbox Style Specification for details on data expressions.
             // https://www.mapbox.com/mapbox-gl-js/style-spec/#expressions
 
             // Get the fill-extrusion-color from the source 'color' property.
-            'fill-extrusion-color': ['get', 'color'],
+            'fill-extrusion-color': {
+                'property': '16_income',
+                "stops": [
+                [0, 'black'],
+                [1000, 'orange']
+                ]
+            }
 
             // Get fill-extrusion-height from the source 'height' property.
             'fill-extrusion-height': ['get', 'height'],
