@@ -5,7 +5,7 @@
     <title>Extrude polygons for 3D indoor mapping.</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
-    <script src='https://github.com/tristan-morgan/urbanDataTest/blob/master/data.js'></script>
+    <script src='https://raw.githubusercontent.com/tristan-morgan/urbanDataTest/master/data.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
     <style>
         body { margin:0; padding:0; }
@@ -34,7 +34,7 @@ map.on('load', function() {
             // GeoJSON Data source used in vector tiles, documented at
             // https://gist.github.com/ryanbaumann/a7d970386ce59d11c16278b90dde094d
             'type': 'geojson',
-            'data': 'https://github.com/tristan-morgan/urbanDataTest/blob/master/data.js'
+            'data': 'https://raw.githubusercontent.com/tristan-morgan/urbanDataTest/master/data.js'
         },
         'paint': {
             // See the Mapbox Style Specification for details on data expressions.
