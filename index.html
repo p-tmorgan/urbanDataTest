@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset='utf-8' />
-    <title>Extrude polygons for 3D indoor mapping.</title>
+    <title>Display a map with a custom style</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
@@ -17,47 +17,10 @@
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoicC10bW9yZ2FuIiwiYSI6ImNqZnVwNGtvNDA2a3QzNHJ2MHlmczZ4NzIifQ.qtp4uIArwX0_yqSr9CVvxQ';
 var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/p-tmorgan/cjg7crshz0bv62rqmia0a8z8f',
-    center: [115.8614, -31.95224],
-    zoom: 5,
-    pitch: 40,
-    bearing: 20
-});
-
-map.on('load', function() {
-    map.addLayer({
-        'id': 'room-extrusion',
-        'type': 'fill-extrusion',
-        'source': {
-            // GeoJSON Data source used in vector tiles, documented at
-            // https://gist.github.com/ryanbaumann/a7d970386ce59d11c16278b90dde094d
-            'type': 'geojson',
-            'data': 'https://github.com/tristan-morgan/urbanDataTest/blob/master/data.js'
-        },
-        'paint': {
-            // See the Mapbox Style Specification for details on data expressions.
-            // https://www.mapbox.com/mapbox-gl-js/style-spec/#expressions
-
-            // Get the fill-extrusion-color from the source 'color' property.
-            'fill-extrusion-color': {
-                'property': '16_income',
-                "stops": [
-                [0, 'black'],
-                [1000, 'orange']
-                ]
-            }
-
-            // Get fill-extrusion-height from the source 'height' property.
-            'fill-extrusion-height': ['get', 'height'],
-
-            // Get fill-extrusion-base from the source 'base_height' property.
-            'fill-extrusion-base': ['get', 'base_height'],
-
-            // Make extrusions slightly opaque for see through indoor walls.
-            'fill-extrusion-opacity': 0.5
-        }
-    });
+    container: 'map', // container id
+    style: 'mapbox://styles/p-tmorgan/cjg7crshz0bv62rqmia0a8z8f', //hosted style id
+    center: [-77.38, 39], // starting position
+    zoom: 3 // starting zoom
 });
 </script>
 
