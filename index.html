@@ -31,35 +31,35 @@ var map = new mapboxgl.Map({
     maxBounds: bounds
 });
     
-map.on('load', function () {
+// map.on('load', function () {
 
-    map.addLayer({
-        "id": "route",
-        "type": "line",
-        "source": {
-            "type": "geojson",
-            "data": {
-                "type": "Feature",
-                "properties": {},
-                "geometry": {
-                    "type": "LineString",
-                    "coordinates": [
-                      [115.86894035339354,-31.968255484882995],
-                      [115.89005470275877,-31.951288315846245]
-                    ]
-                }
-            }
-        },
-        "layout": {
-            "line-join": "round",
-            "line-cap": "round"
-        },
-        "paint": {
-            "line-color": "#888",
-            "line-width": 8
-        }
-    });
-});
+//     map.addLayer({
+//         "id": "route",
+//         "type": "line",
+//         "source": {
+//             "type": "geojson",
+//             "data": {
+//                 "type": "Feature",
+//                 "properties": {},
+//                 "geometry": {
+//                     "type": "LineString",
+//                     "coordinates": [
+//                       [115.86894035339354,-31.968255484882995],
+//                       [115.89005470275877,-31.951288315846245]
+//                     ]
+//                 }
+//             }
+//         },
+//         "layout": {
+//             "line-join": "round",
+//             "line-cap": "round"
+//         },
+//         "paint": {
+//             "line-color": "#888",
+//             "line-width": 8
+//         }
+//     });
+// });
 </script>
 
 </body>
