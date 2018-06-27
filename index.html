@@ -17,10 +17,10 @@
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoicC10bW9yZ2FuIiwiYSI6ImNqZnVwNGtvNDA2a3QzNHJ2MHlmczZ4NzIifQ.qtp4uIArwX0_yqSr9CVvxQ';
 
-//var bounds = [
-//    [115.883947, -31.965517],
-//    [115,873647, -31.953360]
-//];
+var bounds = [
+    [115.86696624755858,-31.949941002865877],
+    [115.89125633239745,-31.968583146131238]
+];
     
     
 var map = new mapboxgl.Map({
@@ -28,7 +28,7 @@ var map = new mapboxgl.Map({
     style: 'mapbox://styles/p-tmorgan/cjg7crshz0bv62rqmia0a8z8f', //hosted style id
     center: [115.880873, -31.961017], // starting position
     zoom: 15,
-    //maxBounds: bounds
+    maxBounds: bounds
 });
     
 map.on('load', function () {
