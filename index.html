@@ -17,10 +17,10 @@
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoicC10bW9yZ2FuIiwiYSI6ImNqZnVwNGtvNDA2a3QzNHJ2MHlmczZ4NzIifQ.qtp4uIArwX0_yqSr9CVvxQ';
 
-var bounds = [
-    [115.883947, -31.965517],
-    [115,873647, -31.953360]
-];
+//var bounds = [
+//    [115.883947, -31.965517],
+//    [115,873647, -31.953360]
+//];
     
     
 var map = new mapboxgl.Map({
@@ -29,6 +29,36 @@ var map = new mapboxgl.Map({
     center: [115.880873, -31.961017], // starting position
     zoom: 15,
     maxBounds: bounds
+});
+    
+    map.on('load', function () {
+
+    map.addLayer({
+        "id": "route",
+        "type": "line",
+        "source": {
+            "type": "geojson",
+            "data": {
+                "type": "Feature",
+                "properties": {},
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [115.883947, -31.965517],
+                        [115,873647, -31.953360]
+                    ]
+                }
+            }
+        },
+        "layout": {
+            "line-join": "round",
+            "line-cap": "round"
+        },
+        "paint": {
+            "line-color": "#888",
+            "line-width": 8
+        }
+    });
 });
 </script>
 
